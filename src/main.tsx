@@ -1,10 +1,11 @@
 import { createRoot } from "react-dom/client";
-import { HashRouter } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import App from "./App.tsx";
 import "./index.css";
 
+// Mount React app with correct basename for GitHub Pages
 createRoot(document.getElementById("root")!).render(
-  <HashRouter>
+  <BrowserRouter basename="/agro">
     <App />
-  </HashRouter>
+  </BrowserRouter>
 );
