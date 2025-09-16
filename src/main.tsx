@@ -3,9 +3,18 @@ import { BrowserRouter } from "react-router-dom";
 import App from "./App.tsx";
 import "./index.css";
 
-// Mount React app with correct basename for GitHub Pages
+// Use "/agro" for GitHub Pages, "/" locally
+const basename =
+  import.meta.env.MODE === "production" ? "/agro" : "/";
+
 createRoot(document.getElementById("root")!).render(
-  <BrowserRouter basename="/agro">
+  <BrowserRouter
+    basename={basename}
+    future={{
+      v7_startTransition: true,
+      v7_relativeSplatPath: true,
+    }}
+  >
     <App />
   </BrowserRouter>
 );
