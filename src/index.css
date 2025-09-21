@@ -1,0 +1,166 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here.
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* GIS App Theme - Earth Tones */
+    --background: 210 20% 98%;
+    --foreground: 120 15% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 120 15% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 120 15% 15%;
+
+    /* Forest Green Primary */
+    --primary: 140 60% 35%;
+    --primary-foreground: 0 0% 98%;
+    --primary-hover: 140 60% 30%;
+
+    /* Soil Brown Secondary */
+    --secondary: 25 40% 85%;
+    --secondary-foreground: 25 25% 25%;
+    --secondary-hover: 25 40% 80%;
+
+    /* Sky Blue Muted */
+    --muted: 200 25% 92%;
+    --muted-foreground: 200 15% 45%;
+
+    /* Earth Accent */
+    --accent: 45 35% 88%;
+    --accent-foreground: 45 25% 25%;
+
+    /* Warning Red */
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 0 0% 98%;
+
+    /* Success Green */
+    --success: 120 60% 50%;
+    --success-foreground: 0 0% 98%;
+
+    /* Borders and Inputs */
+    --border: 200 20% 85%;
+    --input: 200 20% 90%;
+    --ring: 140 60% 35%;
+
+    /* Map specific colors */
+    --map-water: 200 85% 65%;
+    --map-land: 120 25% 85%;
+    --map-boundary: 140 60% 35%;
+    --map-selected: 45 85% 60%;
+
+    /* Gradients */
+    --gradient-earth: linear-gradient(135deg, hsl(140 60% 35%) 0%, hsl(120 40% 45%) 50%, hsl(200 60% 50%) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(210 20% 98%) 0%, hsl(200 15% 95%) 100%);
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 120 15% 8%;
+    --foreground: 200 20% 95%;
+
+    --card: 120 15% 10%;
+    --card-foreground: 200 20% 95%;
+
+    --popover: 120 15% 10%;
+    --popover-foreground: 200 20% 95%;
+
+    --primary: 140 60% 45%;
+    --primary-foreground: 120 15% 8%;
+    --primary-hover: 140 60% 50%;
+
+    --secondary: 25 25% 15%;
+    --secondary-foreground: 25 40% 85%;
+    --secondary-hover: 25 25% 20%;
+
+    --muted: 200 15% 15%;
+    --muted-foreground: 200 15% 65%;
+
+    --accent: 45 25% 20%;
+    --accent-foreground: 45 35% 88%;
+
+    --destructive: 0 60% 50%;
+    --destructive-foreground: 0 0% 98%;
+
+    --success: 120 50% 45%;
+    --success-foreground: 0 0% 98%;
+
+    --border: 200 15% 20%;
+    --input: 200 15% 20%;
+    --ring: 140 60% 45%;
+
+    --map-water: 200 70% 40%;
+    --map-land: 120 20% 25%;
+    --map-boundary: 140 60% 45%;
+    --map-selected: 45 70% 50%;
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  /* Leaflet CSS overrides */
+  .leaflet-container {
+    @apply bg-background;
+  }
+
+  .leaflet-control-container {
+    @apply font-sans;
+  }
+
+  .leaflet-popup-content-wrapper {
+    @apply bg-card text-card-foreground rounded-md;
+  }
+
+  .leaflet-popup-tip {
+    @apply bg-card;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-muted;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-muted-foreground/30 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-muted-foreground/50;
+  }
+}
